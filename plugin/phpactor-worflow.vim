@@ -1,10 +1,11 @@
 " Workflow configuration for https://github.com/phpactor/phpactor
 
-"let g:phpactor_executable = 'phpactor'
+" Please make sure that phpactor is available
+" ln -s ~/.vim/bundles/phpactor/bin/phpactor /usr/local/bin/phpactor
 
 function! PHPModify(transformer)
 	:w
-	exe "!".g:phpactor_executable." class:transform ".expand('%').' --transform='.a:transformer
+	exe "!phpactor class:transform ".expand('%').' --transform='.a:transformer
 	:e
 endfunction
 
