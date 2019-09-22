@@ -16,3 +16,8 @@ nnoremap <leader>re :call PHPModify("rename_variable")<cr>
 
 nnoremap <C-T> :call phpactor#ContextMenu()<cr>
 vmap <C-T> :call phpactor#ExtractExpression(v:true)<cr>
+
+autocmd FileType php setlocal omnifunc=phpactor#Complete
+let g:phpactorPhpBin = 'php'
+let g:phpactorBranch = 'master'
+let g:phpactorOmniAutoClassImport = v:true
